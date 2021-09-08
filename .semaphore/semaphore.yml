@@ -10,7 +10,15 @@ blocks:
       jobs:
         - name: bundle install
           commands:
-            - checkout
-            - sem-version ruby 2.6.0
+            - nvm use 10.15.0
+            - sudo touch /etc/apt/sources.list.d/google-chrome-source.list
+            - install-package --update-new google-chrome-stable
             - bundle install --deployment --path vendor/bundle
+            - 'bundle exec rake db:setup'
+            - 'bundle exec rake db:test:prepare'
+            - 'bundle exec rake assets:precompile'
+            - 'curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter'
+            - chmod +x ./cc-test-reporter
+            - ./cc-test-reporter before-build
             - bundle exec rspec
+            - 'if [ "$SEMAPHORE_THREAD_RESULT" == "passed" ]; then ./cc-test-reporter after-build; fi'
