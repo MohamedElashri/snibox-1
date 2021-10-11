@@ -9,7 +9,7 @@ ruby '>= 2.5.0', '< 2.7.1'
 
 gem 'rails', '~> 5.2', '>= 5.2.3'
 gem 'pg', '~> 1.1', '>= 1.1.4'
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 gem 'sprockets', '~>3.0'
 
