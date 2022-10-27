@@ -6,7 +6,7 @@
     "babel-runtime": "^6.26.0",
     "bulma": "^0.7.1",
     "clipboard": "^2.0.4",
-    "codemirror": "^5.39.0",
+    "codemirror": "^5.58.2",
     "coffeescript": "1.12.7",
     "fuse.js": "^3.2.1",
     "github-markdown-css": "^2.10.0",
